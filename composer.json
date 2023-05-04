@@ -7,7 +7,8 @@
         "php-etl/configurator-contracts": "0.8.*",
         "nikic/php-parser": "^4.10",
         "symfony/config": "^6.0",
-        "php-etl/satellite-toolbox": "0.5.*"
+        "php-etl/satellite-toolbox": "0.5.*",
+        "php-etl/prestashop-api-client": "0.1.*"
     },
     "require-dev": {
         "php-etl/phpunit-extension": "0.5.*",
@@ -46,6 +47,12 @@
         "allow-plugins": {
             "infection/extension-installer": true,
             "php-http/discovery": true
+        }
+    },
+    "repositories": {
+        "php-etl/prestashop-plugin": {
+            "url": "https://github.com/php-etl/prestashop-webservice-lib",
+            "type": "vcs"
         }
     }
 }
