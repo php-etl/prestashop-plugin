@@ -50,7 +50,7 @@
         }
     },
     "repositories": {
-        "php-etl/prestashop-plugin": {
+        "prestashop/prestashop-webservice-lib": {
             "url": "https://github.com/php-etl/prestashop-webservice-lib",
             "type": "vcs"
         }

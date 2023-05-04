@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "db08ee3cec738e02d8cb69421f7eae7d",
+    "content-hash": "b96e483482d5a85e39ce91de1f5fa486",
     "packages": [
         {
             "name": "nikic/php-parser",
@@ -182,12 +182,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-etl/prestashop-api-client.git",
-                "reference": "c9b140061398ee359e2608388c94ce765aee2eaa"
+                "reference": "73f145baeec64d1cc33e515e264d0a352da465d6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-etl/prestashop-api-client/zipball/c9b140061398ee359e2608388c94ce765aee2eaa",
-                "reference": "c9b140061398ee359e2608388c94ce765aee2eaa",
+                "url": "https://api.github.com/repos/php-etl/prestashop-api-client/zipball/73f145baeec64d1cc33e515e264d0a352da465d6",
+                "reference": "73f145baeec64d1cc33e515e264d0a352da465d6",
                 "shasum": ""
             },
             "require": {
@@ -222,7 +222,7 @@
                 "issues": "https://github.com/php-etl/prestashop-api-client/issues",
                 "source": "https://github.com/php-etl/prestashop-api-client/tree/main"
             },
-            "time": "2023-05-04T13:14:19+00:00"
+            "time": "2023-05-04T13:24:41+00:00"
         },
         {
             "name": "php-etl/satellite-toolbox",
