@@ -99,7 +99,7 @@ final class Loader implements StepBuilderInterface
                                                                 var: new Node\Expr\Variable('this'),
                                                                 name: 'logger',
                                                             ),
-                                                            name: new Node\Identifier('critical'),
+                                                            name: new Node\Identifier('error'),
                                                             args: [
                                                                 new Node\Arg(
                                                                     value: new Node\Expr\MethodCall(

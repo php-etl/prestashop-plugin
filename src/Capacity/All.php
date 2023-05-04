@@ -41,8 +41,49 @@ final class All implements CapacityInterface
 
     public function getBuilder(array $config): Builder
     {
-        return (new Prestashop\Builder\Capacity\All($this->interpreter, $config['options'] ?? []))
+        $options = array_filter($config['options']  ?? []);
+
+        if (isset($options['sorters']) && is_array($options['sorters'])) {
+            $options['sort'] = $this->compileSorters($options['sorters']);
+            unset($options['sorters']);
+        }
+
+        if (isset($options['languages']) && is_array($options['languages'])) {
+            $options['language'] = $this->compileLanguages($options['languages']);
+            unset($options['languages']);
+        }
+
+        if (isset($options['columns']) && is_array($options['columns'])) {
+            $options['display'] = $this->compileColumns($options['columns']);
+            unset($options['columns']);
+        }
+
+        return (new Prestashop\Builder\Capacity\All($this->interpreter, $options))
             ->withEndpoint(new Node\Identifier(sprintf('get%sApi', ucfirst((string) $config['type']))))
         ;
+    }
+
+    private function compileSorters(array $sorters): string
+    {
+        $results = [];
+        foreach ($sorters as $key => $value) {
+            $results[] = $key.'_'.$value;
+        }
+
+        return sprintf('[%s]', implode(',', $results));
+    }
+
+    private function compileLanguages(array $languages): string
+    {
+        if (array_key_exists('from', $languages) && array_key_exists('to', $languages)) {
+            return sprintf('[%s,%s]', $languages['from'], $languages['to']);
+        }
+
+        return sprintf('[%s]', implode('|', $languages));
+    }
+
+    private function compileColumns(array $columns): string
+    {
+        return sprintf('[%s]', implode(',', $columns));
     }
 }
