@@ -53,19 +53,26 @@ final class Update implements Builder
                 new Node\Stmt\TryCatch(
                     stmts: [
                         new Node\Stmt\Expression(
-                            expr: new Node\Expr\MethodCall(
-                                new Node\Expr\MethodCall(
-                                    var: new Node\Expr\PropertyFetch(
-                                        var: new Node\Expr\Variable('this'),
-                                        name: new Node\Identifier('client'),
+                            new Node\Expr\Assign(
+                                var: new Node\Expr\Variable('result'),
+                                expr: new Node\Expr\Ternary(
+                                    new Node\Expr\MethodCall(
+                                        new Node\Expr\MethodCall(
+                                            var: new Node\Expr\PropertyFetch(
+                                                var: new Node\Expr\Variable('this'),
+                                                name: new Node\Identifier('client'),
+                                            ),
+                                            name: $this->endpoint,
+                                        ),
+                                        new Node\Identifier('update'),
+                                        [
+                                            new Node\Arg(value: $this->data),
+                                            new Node\Arg(new Node\Expr\Array_($options)),
+                                        ],
                                     ),
-                                    name: $this->endpoint,
+                                    if: null,
+                                    else: new Node\Expr\Array_()
                                 ),
-                                new Node\Identifier('update'),
-                                [
-                                    new Node\Arg(value: $this->data),
-                                    new Node\Arg(new Node\Expr\Array_($options)),
-                                ],
                             ),
                         ),
                         new Node\Stmt\Expression(
@@ -73,10 +80,16 @@ final class Update implements Builder
                                 var: new Node\Expr\Variable('line'),
                                 expr: new Node\Expr\Yield_(
                                     value: new Node\Expr\New_(
-                                        class: new Node\Name\FullyQualified(name: \Kiboko\Component\Bucket\AcceptanceResultBucket::class),
+                                        class: new Node\Name\FullyQualified(name: 'Kiboko\Component\Bucket\AcceptanceResultBucket'),
                                         args: [
                                             new Node\Arg(
-                                                value: new Node\Expr\Variable('line'),
+                                                new Node\Expr\FuncCall(
+                                                    new Node\Name('array_merge'),
+                                                    [
+                                                        new Node\Expr\Variable('line'),
+                                                        new Node\Expr\Variable('result'),
+                                                    ]
+                                                ),
                                             ),
                                         ],
                                     ),
@@ -131,7 +144,7 @@ final class Update implements Builder
                                         expr: new Node\Expr\Yield_(
                                             value: new Node\Expr\New_(
                                                 class: new Node\Name\FullyQualified(
-                                                    name: \Kiboko\Component\Bucket\RejectionResultBucket::class
+                                                    name: 'Kiboko\Component\Bucket\RejectionResultBucket'
                                                 ),
                                                 args: [
                                                     new Node\Arg(

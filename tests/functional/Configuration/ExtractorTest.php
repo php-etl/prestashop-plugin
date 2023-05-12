@@ -34,15 +34,22 @@ final class ExtractorTest extends TestCase
                 'type' => 'suppliers',
                 'method' => 'all',
                 'options' => [
-                    'limit' => '3'
+                    'columns' => [
+                        'id'
+                    ],
                 ],
             ],
             'expected' => [
                 'type' => 'suppliers',
                 'method' => 'all',
                 'options' => [
-                    'limit' => '3',
-                    'filter' => []
+                    'columns' => [
+                        'id'
+                    ],
+                    'filter' => [],
+                    'sorters' => [],
+                    'languages' => [],
+                    'price' => [],
                 ],
             ],
         ];
@@ -64,7 +71,7 @@ final class ExtractorTest extends TestCase
             Config\Definition\Exception\InvalidConfigurationException::class,
         );
         $this->expectExceptionMessage(
-            'Unrecognized option "foo" under "extractor.options". Available options are "date", "display", "filter", "id_group_shop", "id_shop", "language", "limit", "price", "sort".',
+            'Unrecognized option "foo" under "extractor.options". Available options are "columns", "filter", "id_group_shop", "id_shop", "languages", "price", "sorters".',
         );
 
         $this->processor->processConfiguration($client, [

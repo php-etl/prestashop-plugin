@@ -12,8 +12,7 @@
     },
     "require-dev": {
         "php-etl/phpunit-extension": "0.5.*",
-        "rector/rector": "^0.15",
-        "php-etl/bucket": "0.3.*"
+        "rector/rector": "^0.15"
     },
     "license": "MIT",
     "authors": [

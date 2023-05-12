@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b96e483482d5a85e39ce91de1f5fa486",
+    "content-hash": "d9d1ea2b91dd566299a3bc2d6ec17e8e",
     "packages": [
         {
             "name": "nikic/php-parser",
@@ -182,12 +182,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-etl/prestashop-api-client.git",
-                "reference": "73f145baeec64d1cc33e515e264d0a352da465d6"
+                "reference": "ee436b30e2c7a44d370827b42fe306e604389625"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-etl/prestashop-api-client/zipball/73f145baeec64d1cc33e515e264d0a352da465d6",
-                "reference": "73f145baeec64d1cc33e515e264d0a352da465d6",
+                "url": "https://api.github.com/repos/php-etl/prestashop-api-client/zipball/ee436b30e2c7a44d370827b42fe306e604389625",
+                "reference": "ee436b30e2c7a44d370827b42fe306e604389625",
                 "shasum": ""
             },
             "require": {
@@ -222,7 +222,7 @@
                 "issues": "https://github.com/php-etl/prestashop-api-client/issues",
                 "source": "https://github.com/php-etl/prestashop-api-client/tree/main"
             },
-            "time": "2023-05-04T13:24:41+00:00"
+            "time": "2023-05-12T07:50:00+00:00"
         },
         {
             "name": "php-etl/satellite-toolbox",
@@ -296,12 +296,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-etl/prestashop-webservice-lib.git",
-                "reference": "4b67c657704cc48dc65370fff28fa2703538b55e"
+                "reference": "c82b9e40ada7c55d89062031e0de10aecf221850"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-etl/prestashop-webservice-lib/zipball/4b67c657704cc48dc65370fff28fa2703538b55e",
-                "reference": "4b67c657704cc48dc65370fff28fa2703538b55e",
+                "url": "https://api.github.com/repos/php-etl/prestashop-webservice-lib/zipball/c82b9e40ada7c55d89062031e0de10aecf221850",
+                "reference": "c82b9e40ada7c55d89062031e0de10aecf221850",
                 "shasum": ""
             },
             "require": {
@@ -329,7 +329,7 @@
             "support": {
                 "source": "https://github.com/php-etl/prestashop-webservice-lib/tree/feature/better-error-handling"
             },
-            "time": "2023-05-03T07:44:21+00:00"
+            "time": "2023-05-10T08:08:00+00:00"
         },
         {
             "name": "psr/cache",
@@ -1808,62 +1808,6 @@
             "time": "2022-02-21T01:04:05+00:00"
         },
         {
-            "name": "php-etl/bucket",
-            "version": "v0.3.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/php-etl/bucket.git",
-                "reference": "4c63c1a55f93956634a53662dfd4cde1833ddcee"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/php-etl/bucket/zipball/4c63c1a55f93956634a53662dfd4cde1833ddcee",
-                "reference": "4c63c1a55f93956634a53662dfd4cde1833ddcee",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^8.2",
-                "php-etl/bucket-contracts": "0.2.*"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "^3.0",
-                "phpspec/phpspec": "^7.3",
-                "phpstan/phpstan": "^1.10",
-                "rector/rector": "^0.15"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-main": "0.3.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Kiboko\\Component\\Bucket\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Kiboko SAS",
-                    "homepage": "http://kiboko.fr"
-                },
-                {
-                    "name": "Grégory Planchat",
-                    "email": "gregory@kiboko.fr"
-                }
-            ],
-            "description": "This library implements the Extract-Transform-Load pattern asynchronously in PHP with the help of iterators and generators",
-            "support": {
-                "issues": "https://github.com/php-etl/bucket/issues",
-                "source": "https://github.com/php-etl/bucket/tree/v0.3.0"
-            },
-            "time": "2023-04-12T12:40:59+00:00"
-        },
-        {
             "name": "php-etl/bucket-contracts",
             "version": "v0.2.0",
             "source": {
@@ -2291,23 +2235,23 @@
         },
         {
             "name": "php-http/message",
-            "version": "1.14.0",
+            "version": "1.15.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-http/message.git",
-                "reference": "2ccee04a28c3d98eb3f2b85ce1e2fcff70c0e63b"
+                "reference": "2a1fbaa00cf5ffc82f379adf47388663bce8190d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-http/message/zipball/2ccee04a28c3d98eb3f2b85ce1e2fcff70c0e63b",
-                "reference": "2ccee04a28c3d98eb3f2b85ce1e2fcff70c0e63b",
+                "url": "https://api.github.com/repos/php-http/message/zipball/2a1fbaa00cf5ffc82f379adf47388663bce8190d",
+                "reference": "2a1fbaa00cf5ffc82f379adf47388663bce8190d",
                 "shasum": ""
             },
             "require": {
                 "clue/stream-filter": "^1.5",
-                "php": "^7.1 || ^8.0",
+                "php": "^7.2 || ^8.0",
                 "php-http/message-factory": "^1.0.2",
-                "psr/http-message": "^1.0 || ^2.0"
+                "psr/http-message": "^1.1 || ^2.0"
             },
             "provide": {
                 "php-http/message-factory-implementation": "1.0"
@@ -2315,8 +2259,8 @@
             "require-dev": {
                 "ergebnis/composer-normalize": "^2.6",
                 "ext-zlib": "*",
-                "guzzlehttp/psr7": "^1.0",
-                "laminas/laminas-diactoros": "^2.0",
+                "guzzlehttp/psr7": "^1.0 || ^2.0",
+                "laminas/laminas-diactoros": "^2.0 || ^3.0",
                 "phpspec/phpspec": "^5.1 || ^6.3 || ^7.1",
                 "slim/slim": "^3.0"
             },
@@ -2354,9 +2298,9 @@
             ],
             "support": {
                 "issues": "https://github.com/php-http/message/issues",
-                "source": "https://github.com/php-http/message/tree/1.14.0"
+                "source": "https://github.com/php-http/message/tree/1.15.0"
             },
-            "time": "2023-04-14T14:26:18+00:00"
+            "time": "2023-05-10T08:19:58+00:00"
         },
         {
             "name": "php-http/message-factory",
@@ -2410,6 +2354,7 @@
                 "issues": "https://github.com/php-http/message-factory/issues",
                 "source": "https://github.com/php-http/message-factory/tree/1.1.0"
             },
+            "abandoned": "psr/http-factory",
             "time": "2023-04-14T14:16:17+00:00"
         },
         {
@@ -2534,16 +2479,16 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "1.10.14",
+            "version": "1.10.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "d232901b09e67538e5c86a724be841bea5768a7c"
+                "reference": "762c4dac4da6f8756eebb80e528c3a47855da9bd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/d232901b09e67538e5c86a724be841bea5768a7c",
-                "reference": "d232901b09e67538e5c86a724be841bea5768a7c",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/762c4dac4da6f8756eebb80e528c3a47855da9bd",
+                "reference": "762c4dac4da6f8756eebb80e528c3a47855da9bd",
                 "shasum": ""
             },
             "require": {
@@ -2592,7 +2537,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-04-19T13:47:27+00:00"
+            "time": "2023-05-09T15:28:01+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -2674,16 +2619,16 @@
         },
         {
             "name": "phpunit/php-file-iterator",
-            "version": "4.0.1",
+            "version": "4.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-file-iterator.git",
-                "reference": "fd9329ab3368f59fe1fe808a189c51086bd4b6bd"
+                "reference": "5647d65443818959172645e7ed999217360654b6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-file-iterator/zipball/fd9329ab3368f59fe1fe808a189c51086bd4b6bd",
-                "reference": "fd9329ab3368f59fe1fe808a189c51086bd4b6bd",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-file-iterator/zipball/5647d65443818959172645e7ed999217360654b6",
+                "reference": "5647d65443818959172645e7ed999217360654b6",
                 "shasum": ""
             },
             "require": {
@@ -2722,7 +2667,8 @@
             ],
             "support": {
                 "issues": "https://github.com/sebastianbergmann/php-file-iterator/issues",
-                "source": "https://github.com/sebastianbergmann/php-file-iterator/tree/4.0.1"
+                "security": "https://github.com/sebastianbergmann/php-file-iterator/security/policy",
+                "source": "https://github.com/sebastianbergmann/php-file-iterator/tree/4.0.2"
             },
             "funding": [
                 {
@@ -2730,7 +2676,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-02-10T16:53:14+00:00"
+            "time": "2023-05-07T09:13:23+00:00"
         },
         {
             "name": "phpunit/php-invoker",
@@ -2915,16 +2861,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "10.1.2",
+            "version": "10.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "6f0cd95be71add539f8fd2be25b2a4a29789000b"
+                "reference": "2379ebafc1737e71cdc84f402acb6b7f04198b9d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/6f0cd95be71add539f8fd2be25b2a4a29789000b",
-                "reference": "6f0cd95be71add539f8fd2be25b2a4a29789000b",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/2379ebafc1737e71cdc84f402acb6b7f04198b9d",
+                "reference": "2379ebafc1737e71cdc84f402acb6b7f04198b9d",
                 "shasum": ""
             },
             "require": {
@@ -2996,7 +2942,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/10.1.2"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/10.1.3"
             },
             "funding": [
                 {
@@ -3012,7 +2958,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-04-22T07:38:19+00:00"
+            "time": "2023-05-11T05:16:22+00:00"
         },
         {
             "name": "psr/http-client",
