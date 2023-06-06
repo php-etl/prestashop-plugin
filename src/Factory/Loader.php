@@ -26,6 +26,7 @@ final readonly class Loader implements FactoryInterface
             new Prestashop\Capacity\Create(),
             new Prestashop\Capacity\Update(),
             new Prestashop\Capacity\Upsert(),
+            new Prestashop\Capacity\Upload(),
         ];
     }
 

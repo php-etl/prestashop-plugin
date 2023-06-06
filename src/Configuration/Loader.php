@@ -74,6 +74,9 @@ final class Loader implements PluginConfigurationInterface
             'update',
             'upsert',
         ],
+        'product_images' => [
+            'upload',
+        ],
     ];
 
     public function getConfigTreeBuilder(): TreeBuilder
