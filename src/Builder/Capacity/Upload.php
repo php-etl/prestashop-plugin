@@ -53,26 +53,19 @@ final class Upload implements Builder
                 new Node\Stmt\TryCatch(
                     stmts: [
                         new Node\Stmt\Expression(
-                            new Node\Expr\Assign(
-                                var: new Node\Expr\Variable('result'),
-                                expr: new Node\Expr\Ternary(
-                                    new Node\Expr\MethodCall(
-                                        new Node\Expr\MethodCall(
-                                            var: new Node\Expr\PropertyFetch(
-                                                var: new Node\Expr\Variable('this'),
-                                                name: new Node\Identifier('client'),
-                                            ),
-                                            name: $this->endpoint,
-                                        ),
-                                        new Node\Identifier('upload'),
-                                        args: [
-                                            new Node\Arg(value: $this->data),
-                                            new Node\Arg(new Node\Expr\Array_($options)),
-                                        ],
+                            new Node\Expr\MethodCall(
+                                new Node\Expr\MethodCall(
+                                    var: new Node\Expr\PropertyFetch(
+                                        var: new Node\Expr\Variable('this'),
+                                        name: new Node\Identifier('client'),
                                     ),
-                                    if: null,
-                                    else: new Node\Expr\Array_()
+                                    name: $this->endpoint,
                                 ),
+                                new Node\Identifier('upload'),
+                                args: [
+                                    new Node\Arg(value: $this->data),
+                                    new Node\Arg(new Node\Expr\Array_($options)),
+                                ],
                             ),
                         ),
                         new Node\Stmt\Expression(
@@ -80,18 +73,7 @@ final class Upload implements Builder
                                 var: new Node\Expr\Variable('line'),
                                 expr: new Node\Expr\Yield_(
                                     value: new Node\Expr\New_(
-                                        class: new Node\Name\FullyQualified(name: 'Kiboko\Component\Bucket\AcceptanceResultBucket'),
-                                        args: [
-                                            new Node\Arg(
-                                                new Node\Expr\FuncCall(
-                                                    new Node\Name('array_merge'),
-                                                    [
-                                                        new Node\Expr\Variable('line'),
-                                                        new Node\Expr\Variable('result'),
-                                                    ]
-                                                ),
-                                            ),
-                                        ],
+                                        class: new Node\Name\FullyQualified(name: 'Kiboko\Component\Bucket\EmptyResultBucket'),
                                     ),
                                 ),
                             ),
