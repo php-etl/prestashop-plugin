@@ -25,7 +25,7 @@ prestashop:
         - 'id'
         - 'product_type'
         - 'price'
-      filters:
+      filter:
         id: '[1,10]'
       sorters:
         id: ASC
