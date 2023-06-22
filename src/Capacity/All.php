@@ -41,19 +41,19 @@ final class All implements CapacityInterface
 
     public function getBuilder(array $config): Builder
     {
-        $options = array_filter($config['options']  ?? []);
+        $options = array_filter($config['options'] ?? []);
 
-        if (isset($options['sorters']) && is_array($options['sorters'])) {
+        if (isset($options['sorters']) && \is_array($options['sorters'])) {
             $options['sort'] = $this->compileSorters($options['sorters']);
             unset($options['sorters']);
         }
 
-        if (isset($options['languages']) && is_array($options['languages'])) {
+        if (isset($options['languages']) && \is_array($options['languages'])) {
             $options['language'] = $this->compileLanguages($options['languages']);
             unset($options['languages']);
         }
 
-        if (isset($options['columns']) && is_array($options['columns'])) {
+        if (isset($options['columns']) && \is_array($options['columns'])) {
             $options['display'] = $this->compileColumns($options['columns']);
             unset($options['columns']);
         }
@@ -75,7 +75,7 @@ final class All implements CapacityInterface
 
     private function compileLanguages(array $languages): string
     {
-        if (array_key_exists('from', $languages) && array_key_exists('to', $languages)) {
+        if (\array_key_exists('from', $languages) && \array_key_exists('to', $languages)) {
             return sprintf('[%s,%s]', $languages['from'], $languages['to']);
         }
 
