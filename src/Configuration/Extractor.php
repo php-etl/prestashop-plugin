@@ -30,6 +30,10 @@ final class Extractor implements PluginConfigurationInterface
             'all',
             'get',
         ],
+        'product_images' => [
+            'all',
+            'get',
+        ],
         'product_options' => [
             'all',
             'get',

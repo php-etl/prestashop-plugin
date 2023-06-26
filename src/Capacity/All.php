@@ -17,6 +17,7 @@ final class All implements CapacityInterface
         'manufacturers',
         'product_features',
         'product_feature_values',
+        'product_images',
         'product_options',
         'product_option_values',
         'products',
