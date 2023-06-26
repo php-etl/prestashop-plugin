@@ -25,6 +25,7 @@ final readonly class Extractor implements FactoryInterface
         $this->configuration = new Prestashop\Configuration\Extractor();
         $this->capacities = [
             new Prestashop\Capacity\All($this->interpreter),
+            new Prestashop\Capacity\Get($this->interpreter),
         ];
     }
 
