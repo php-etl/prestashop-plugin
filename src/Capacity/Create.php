@@ -21,6 +21,7 @@ final class Create implements CapacityInterface
         'products',
         'shops',
         'suppliers',
+        'tags',
         'tax_rule_groups',
         'tax_rules',
     ];

@@ -58,6 +58,10 @@ final class Extractor implements PluginConfigurationInterface
             'all',
             'get',
         ],
+        'tags' => [
+            'all',
+            'get',
+        ],
         'tax_rule_groups' => [
             'all',
             'get',

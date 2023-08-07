@@ -24,6 +24,7 @@ final class All implements CapacityInterface
         'shops',
         'stock_availables',
         'suppliers',
+        'tags',
         'tax_rule_groups',
         'tax_rules',
     ];

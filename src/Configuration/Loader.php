@@ -64,6 +64,11 @@ final class Loader implements PluginConfigurationInterface
             'update',
             'upsert',
         ],
+        'tags' => [
+            'create',
+            'update',
+            'upsert',
+        ],
         'tax_rule_groups' => [
             'create',
             'update',
