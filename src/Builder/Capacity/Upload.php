@@ -77,22 +77,20 @@ final class Upload implements Builder
                         ),
                         new Node\Stmt\Expression(
                             expr: new Node\Expr\Assign(
-                                var: new Node\Expr\Variable('line'),
-                                expr: new Node\Expr\Yield_(
-                                    value: new Node\Expr\New_(
-                                        class: new Node\Name\FullyQualified(name: 'Kiboko\Component\Bucket\AcceptanceResultBucket'),
-                                        args: [
-                                            new Node\Arg(
-                                                new Node\Expr\FuncCall(
-                                                    new Node\Name('array_merge'),
-                                                    [
-                                                        new Node\Expr\Variable('line'),
-                                                        new Node\Expr\Variable('result'),
-                                                    ]
-                                                ),
+                                var: new Node\Expr\Variable('bucket'),
+                                expr: new Node\Expr\New_(
+                                    class: new Node\Name\FullyQualified(name: 'Kiboko\Component\Bucket\AcceptanceResultBucket'),
+                                    args: [
+                                        new Node\Arg(
+                                            new Node\Expr\FuncCall(
+                                                new Node\Name('array_merge'),
+                                                [
+                                                    new Node\Expr\Variable('line'),
+                                                    new Node\Expr\Variable('result'),
+                                                ]
                                             ),
-                                        ],
-                                    ),
+                                        ),
+                                    ],
                                 ),
                             ),
                         ),
@@ -100,7 +98,7 @@ final class Upload implements Builder
                     catches: [
                         new Node\Stmt\Catch_(
                             types: [
-                                new Node\Name\FullyQualified('Exception'),
+                                new Node\Name\FullyQualified('PrestaShopWebserviceBadParametersException'),
                             ],
                             var: new Node\Expr\Variable('exception'),
                             stmts: [
@@ -140,27 +138,105 @@ final class Upload implements Builder
                                 ),
                                 new Node\Stmt\Expression(
                                     expr: new Node\Expr\Assign(
-                                        var: new Node\Expr\Variable('line'),
-                                        expr: new Node\Expr\Yield_(
-                                            value: new Node\Expr\New_(
-                                                class: new Node\Name\FullyQualified(
-                                                    name: 'Kiboko\Component\Bucket\RejectionResultBucket'
-                                                ),
-                                                args: [
-                                                    new Node\Arg(
-                                                        value: new Node\Expr\Variable('exception'),
-                                                    ),
-                                                    new Node\Arg(
-                                                        value: new Node\Expr\Variable('line'),
-                                                    ),
-                                                ],
+                                        var: new Node\Expr\Variable('bucket'),
+                                        expr: new Node\Expr\New_(
+                                            class: new Node\Name\FullyQualified(
+                                                name: 'Kiboko\Component\Bucket\RejectionResultBucket'
                                             ),
+                                            args: [
+                                                new Node\Arg(
+                                                    value: new Node\Expr\Variable('exception'),
+                                                ),
+                                                new Node\Arg(
+                                                    value: new Node\Expr\Variable('line'),
+                                                ),
+                                            ],
+                                        ),
+                                    ),
+                                ),
+                            ],
+                        ),
+                        new Node\Stmt\Catch_(
+                            types: [
+                                new Node\Name\FullyQualified('PrestaShopWebserviceServerException'),
+                            ],
+                            var: new Node\Expr\Variable('exception'),
+                            stmts: [
+                                new Node\Stmt\Expression(
+                                    expr: new Node\Expr\MethodCall(
+                                        var: new Node\Expr\PropertyFetch(
+                                            var: new Node\Expr\Variable('this'),
+                                            name: 'logger',
+                                        ),
+                                        name: new Node\Identifier('critical'),
+                                        args: [
+                                            new Node\Arg(
+                                                value: new Node\Expr\MethodCall(
+                                                    var: new Node\Expr\Variable('exception'),
+                                                    name: new Node\Identifier('getMessage'),
+                                                ),
+                                            ),
+                                            new Node\Arg(
+                                                value: new Node\Expr\Array_(
+                                                    items: [
+                                                        new Node\Expr\ArrayItem(
+                                                            value: new Node\Expr\Variable('exception'),
+                                                            key: new Node\Scalar\String_('exception'),
+                                                        ),
+                                                        new Node\Expr\ArrayItem(
+                                                            value: new Node\Expr\Variable('line'),
+                                                            key: new Node\Scalar\String_('item'),
+                                                        ),
+                                                    ],
+                                                    attributes: [
+                                                        'kind' => Node\Expr\Array_::KIND_SHORT,
+                                                    ],
+                                                ),
+                                            ),
+                                        ],
+                                    ),
+                                ),
+                                new Node\Stmt\Expression(
+                                    expr: new Node\Expr\Assign(
+                                        var: new Node\Expr\Variable('bucket'),
+                                        expr: new Node\Expr\New_(
+                                            class: new Node\Name\FullyQualified(
+                                                name: 'Kiboko\Component\Bucket\RejectionResultBucket'
+                                            ),
+                                            args: [
+                                                new Node\Arg(
+                                                    value: new Node\Expr\Variable('exception'),
+                                                ),
+                                                new Node\Arg(
+                                                    value: new Node\Expr\Variable('line'),
+                                                ),
+                                            ],
                                         ),
                                     ),
                                 ),
                             ],
                         ),
                     ],
+                    finally: new Node\Stmt\Finally_(
+                        stmts: [
+                            new Node\Stmt\Expression(
+                                expr: new Node\Expr\FuncCall(
+                                    name: new Node\Name('fclose'),
+                                    args: [
+                                        new Node\Arg(new Node\Expr\Variable('line[\'image\']')),
+                                    ]
+                                ),
+                            ),
+                        ],
+                    )
+                ),
+                new Node\Stmt\Expression(
+                    expr: new Node\Expr\Assign(
+                        var: new Node\Expr\Variable('line'),
+                        expr: new Node\Expr\Yield_(
+                            value: new Node\Expr\Variable('bucket'),
+                        )
+                    )
                 ),
             ],
         );
