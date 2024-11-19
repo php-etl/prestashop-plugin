@@ -94,7 +94,7 @@ final class Loader implements PluginConfigurationInterface
             ->ifArray()
                 ->then(function (array $item) {
                     if (!\in_array($item['method'], self::$endpoints[$item['type']])) {
-                        throw new \InvalidArgumentException(sprintf('the value should be one of [%s], got %s', implode(', ', self::$endpoints[$item['type']]), json_encode($item['method'], \JSON_THROW_ON_ERROR)));
+                        throw new \InvalidArgumentException(\sprintf('the value should be one of [%s], got %s', implode(', ', self::$endpoints[$item['type']]), json_encode($item['method'], \JSON_THROW_ON_ERROR)));
                     }
 
                     return $item;
@@ -106,7 +106,7 @@ final class Loader implements PluginConfigurationInterface
                     ->validate()
                         ->ifNotInArray(array_keys(self::$endpoints))
                         ->thenInvalid(
-                            sprintf('the value should be one of [%s]', implode(', ', array_keys(self::$endpoints)))
+                            \sprintf('the value should be one of [%s]', implode(', ', array_keys(self::$endpoints)))
                         )
                     ->end()
                 ->end()

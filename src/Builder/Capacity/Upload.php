@@ -9,8 +9,8 @@ use PhpParser\Node;
 
 final class Upload implements Builder
 {
-    private null|Node\Expr|Node\Identifier $endpoint = null;
-    private null|Node\Expr $data = null;
+    private Node\Expr|Node\Identifier|null $endpoint = null;
+    private ?Node\Expr $data = null;
 
     public function __construct(public array $options = [])
     {

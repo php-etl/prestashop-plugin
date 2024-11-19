@@ -84,7 +84,7 @@ final class Extractor implements PluginConfigurationInterface
                     ->validate()
                         ->ifNotInArray(array_keys(self::$endpoints))
                         ->thenInvalid(
-                            sprintf(
+                            \sprintf(
                                 'the value should be one of [%s], got %%s',
                                 implode(', ', array_keys(self::$endpoints))
                             )

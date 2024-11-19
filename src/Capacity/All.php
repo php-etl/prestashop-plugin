@@ -61,7 +61,7 @@ final class All implements CapacityInterface
         }
 
         return (new Prestashop\Builder\Capacity\All($this->interpreter, $options))
-            ->withEndpoint(new Node\Identifier(sprintf('get%sApi', ucfirst((string) $config['type']))))
+            ->withEndpoint(new Node\Identifier(\sprintf('get%sApi', ucfirst((string) $config['type']))))
         ;
     }
 
@@ -72,20 +72,20 @@ final class All implements CapacityInterface
             $results[] = $key.'_'.$value;
         }
 
-        return sprintf('[%s]', implode(',', $results));
+        return \sprintf('[%s]', implode(',', $results));
     }
 
     private function compileLanguages(array $languages): string
     {
         if (\array_key_exists('from', $languages) && \array_key_exists('to', $languages)) {
-            return sprintf('[%s,%s]', $languages['from'], $languages['to']);
+            return \sprintf('[%s,%s]', $languages['from'], $languages['to']);
         }
 
-        return sprintf('[%s]', implode('|', $languages));
+        return \sprintf('[%s]', implode('|', $languages));
     }
 
     private function compileColumns(array $columns): string
     {
-        return sprintf('[%s]', implode(',', $columns));
+        return \sprintf('[%s]', implode(',', $columns));
     }
 }
