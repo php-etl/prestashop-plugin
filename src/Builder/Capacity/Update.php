@@ -80,7 +80,7 @@ final class Update implements Builder
                                 var: new Node\Expr\Variable('line'),
                                 expr: new Node\Expr\Yield_(
                                     value: new Node\Expr\New_(
-                                        class: new Node\Name\FullyQualified(name: 'Kiboko\Component\Bucket\AcceptanceResultBucket'),
+                                        class: new Node\Name\FullyQualified(name: \Kiboko\Component\Bucket\AcceptanceResultBucket::class),
                                         args: [
                                             new Node\Arg(
                                                 new Node\Expr\FuncCall(
@@ -144,7 +144,7 @@ final class Update implements Builder
                                         expr: new Node\Expr\Yield_(
                                             value: new Node\Expr\New_(
                                                 class: new Node\Name\FullyQualified(
-                                                    name: 'Kiboko\Component\Bucket\RejectionResultBucket'
+                                                    name: \Kiboko\Component\Bucket\RejectionResultBucket::class
                                                 ),
                                                 args: [
                                                     new Node\Arg(
