@@ -12,7 +12,7 @@ use function Kiboko\Component\SatelliteToolbox\Configuration\compileValueWhenExp
 
 final class All implements Builder
 {
-    private null|Node\Expr|Node\Identifier $endpoint = null;
+    private Node\Expr|Node\Identifier|null $endpoint = null;
 
     public function __construct(
         private readonly ExpressionLanguage $interpreter,

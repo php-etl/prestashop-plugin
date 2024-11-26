@@ -9,8 +9,8 @@ use PhpParser\Node;
 
 final class Create implements Builder
 {
-    private null|Node\Expr|Node\Identifier $endpoint = null;
-    private null|Node\Expr $data = null;
+    private Node\Expr|Node\Identifier|null $endpoint = null;
+    private ?Node\Expr $data = null;
 
     public function __construct(public array $options = [])
     {
@@ -80,7 +80,7 @@ final class Create implements Builder
                                 var: new Node\Expr\Variable('line'),
                                 expr: new Node\Expr\Yield_(
                                     value: new Node\Expr\New_(
-                                        class: new Node\Name\FullyQualified(name: 'Kiboko\Component\Bucket\AcceptanceResultBucket'),
+                                        class: new Node\Name\FullyQualified(name: \Kiboko\Component\Bucket\AcceptanceResultBucket::class),
                                         args: [
                                             new Node\Arg(
                                                 new Node\Expr\FuncCall(
@@ -144,7 +144,7 @@ final class Create implements Builder
                                         expr: new Node\Expr\Yield_(
                                             value: new Node\Expr\New_(
                                                 class: new Node\Name\FullyQualified(
-                                                    name: 'Kiboko\Component\Bucket\RejectionResultBucket'
+                                                    name: \Kiboko\Component\Bucket\RejectionResultBucket::class
                                                 ),
                                                 args: [
                                                     new Node\Arg(

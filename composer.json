@@ -2,6 +2,15 @@
     "name": "php-etl/prestashop-plugin",
     "description": "Plugin for Prestashop Extractor and Loader",
     "type": "gyroscops-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Grégory Planchat",
+            "email": "gregory@kiboko.fr"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "require": {
         "php": "^8.2",
         "php-etl/configurator-contracts": "0.8.*",
@@ -12,17 +21,11 @@
     },
     "require-dev": {
         "php-etl/phpunit-extension": "0.5.*",
-        "rector/rector": "^0.15"
+        "rector/rector": "^0.15",
+        "php-etl/bucket-contracts": "0.2.*",
+        "php-etl/bucket": "*",
+        "phpstan/phpstan": "^1.10"
     },
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Grégory Planchat",
-            "email": "gregory@kiboko.fr"
-        }
-    ],
-    "minimum-stability": "dev",
-    "prefer-stable": true,
     "autoload": {
         "psr-4": {
             "Kiboko\\Plugin\\Prestashop\\": "src/"

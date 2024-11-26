@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d9d1ea2b91dd566299a3bc2d6ec17e8e",
+    "content-hash": "31d9254a345734da3049110ce016229f",
     "packages": [
         {
             "name": "nikic/php-parser",
@@ -2625,6 +2625,62 @@
             "time": "2022-02-21T01:04:05+00:00"
         },
         {
+            "name": "php-etl/bucket",
+            "version": "v0.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-etl/bucket.git",
+                "reference": "4c63c1a55f93956634a53662dfd4cde1833ddcee"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-etl/bucket/zipball/4c63c1a55f93956634a53662dfd4cde1833ddcee",
+                "reference": "4c63c1a55f93956634a53662dfd4cde1833ddcee",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.2",
+                "php-etl/bucket-contracts": "0.2.*"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.0",
+                "phpspec/phpspec": "^7.3",
+                "phpstan/phpstan": "^1.10",
+                "rector/rector": "^0.15"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "0.3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Kiboko\\Component\\Bucket\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kiboko SAS",
+                    "homepage": "http://kiboko.fr"
+                },
+                {
+                    "name": "Grégory Planchat",
+                    "email": "gregory@kiboko.fr"
+                }
+            ],
+            "description": "This library implements the Extract-Transform-Load pattern asynchronously in PHP with the help of iterators and generators",
+            "support": {
+                "issues": "https://github.com/php-etl/bucket/issues",
+                "source": "https://github.com/php-etl/bucket/tree/v0.3.0"
+            },
+            "time": "2023-04-12T12:40:59+00:00"
+        },
+        {
             "name": "php-etl/bucket-contracts",
             "version": "v0.2.0",
             "source": {
@@ -3239,16 +3295,16 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "1.10.30",
+            "version": "1.12.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "2910afdd3fe33e5afd71c09f3fb0d0845b48c410"
+                "reference": "0d1fc20a962a91be578bcfe7cf939e6e1a2ff733"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/2910afdd3fe33e5afd71c09f3fb0d0845b48c410",
-                "reference": "2910afdd3fe33e5afd71c09f3fb0d0845b48c410",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/0d1fc20a962a91be578bcfe7cf939e6e1a2ff733",
+                "reference": "0d1fc20a962a91be578bcfe7cf939e6e1a2ff733",
                 "shasum": ""
             },
             "require": {
@@ -3291,13 +3347,9 @@
                 {
                     "url": "https://github.com/phpstan",
                     "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/phpstan/phpstan",
-                    "type": "tidelift"
                 }
             ],
-            "time": "2023-08-22T13:48:25+00:00"
+            "time": "2024-11-17T14:08:01+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",

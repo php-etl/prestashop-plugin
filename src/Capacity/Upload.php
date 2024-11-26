@@ -25,7 +25,7 @@ final class Upload implements CapacityInterface
     public function getBuilder(array $config): Builder
     {
         return (new Prestashop\Builder\Capacity\Upload($config['options'] ?? []))
-            ->withEndpoint(new Node\Identifier(sprintf('get%sApi', ucfirst((string) $config['type']))))
+            ->withEndpoint(new Node\Identifier(\sprintf('get%sApi', ucfirst((string) $config['type']))))
             ->withData(line: new Node\Expr\Variable('line'))
         ;
     }
