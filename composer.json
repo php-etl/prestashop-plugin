@@ -20,11 +20,11 @@
         "php-etl/prestashop-api-client": "0.1.*"
     },
     "require-dev": {
-        "php-etl/phpunit-extension": "0.5.*",
-        "rector/rector": "^2.0",
-        "php-etl/bucket-contracts": "0.2.*",
+        "php-etl/phpunit-extension": "*",
+        "rector/rector": "^2.3",
+        "php-etl/bucket-contracts": "0.3.*",
         "php-etl/bucket": "*",
-        "phpstan/phpstan": "^2.2"
+        "phpstan/phpstan": "^2.1"
     },
     "autoload": {
         "psr-4": {
@@ -51,10 +51,8 @@
             "php-http/discovery": true
         }
     },
-    "repositories": {
-        "prestashop/prestashop-webservice-lib": {
-            "url": "https://github.com/php-etl/prestashop-webservice-lib",
-            "type": "vcs"
-        }
-    }
+    "repositories": [
+        {"type": "path", "url": "../../phpunit-extension"},
+        {"type": "vcs", "url": "https://github.com/php-etl/prestashop-webservice-lib"}
+    ]
 }
